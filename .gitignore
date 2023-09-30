@@ -6,6 +6,6 @@ local_settings.py
 db.sqlite3
 /media
 venv
-/static
 .vscode
 .sqlite3
+.code-workspace

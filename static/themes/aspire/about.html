@@ -1,0 +1,18 @@
+<!-- custom template to display an about page, uses normal post to hold contents, triggered by 
+selecting the post as an about page.
+-->
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+  <div class="row">
+    {% for post in queryset %}
+    <div class="col-md-8 card mb-4  mt-3 left float-left  top">
+      <img src='../media/{{ post.header_image }}' class="img-fluid" />
+      <div class="card-body">
+         <p class="card-text ">{{ post.content | safe }}</p>
+      </div>
+    </div>
+    {% endfor %}
+    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+  </div>
+{% endblock content %}

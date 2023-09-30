@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+{% block content %}
+    <div class="row">        
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">          
+            <h3>Searched for - "{% for searched in query %}{{ searched }}{% endfor %}" </h3>
+            {% if searched %}             
+              {% for post in searched %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <a href="{% url 'post_detail' post.slug post.pk %}" ><h2 class="card-title">{{ post.title }}</h2></a>
+                        <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | {% block categories %} {% include 'post_categories.html' %} {% endblock categories %}</p>
+                        <p class="card-text">{{post.seo_teaser |slice:":200"  | safe  }}</p>
+                        <a href="{% url 'post_detail' post.slug post.pk %}" class="btn btn-primary">Read More &rarr;</a>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+              <h1>Nothing to see here</h1>
+              
+            {% endif %}
+        </div>
+        {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mb-4  mt-3 left  top">
+          {% if is_paginated %}
+        <nav aria-label="Page navigation conatiner"></nav>
+        <ul class="pagination justify-content-center">
+          {% if page_obj.has_previous %}
+          <li><a href="?page={{ page_obj.previous_page_number }}"
+       class="page-link">&laquo; PREV </a></li>
+          {% endif %}    {% if page_obj.has_next %}
+          <li><a href="?page={{ page_obj.next_page_number }}"
+       class="page-link"> NEXT &raquo;</a></li>
+          {% endif %}
+        </ul>
+        </nav></div>
+      {% endif %}
+        </div>
+        
+      </div>
+
+      
+
+{%endblock%}

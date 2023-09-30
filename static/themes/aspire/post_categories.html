@@ -1,0 +1,6 @@
+{% block categories %}
+{% for cat in post.categories.all %} 
+    <a href="{% url 'category' cat.slug cat.pk %}" style="text-decoration: underline;">{{ cat.name }}</a> • 
+{% endfor %}
+{% endblock categories %}
+

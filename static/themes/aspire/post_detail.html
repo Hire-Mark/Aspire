@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+{% block content %}
+  <div class="row">
+    {% for post in queryset %}
+      <div class="col-md-8 card mb-4  mt-3 left float-left  top">
+        <img src='../media/{{ post.header_image }}' class="img-fluid" />
+        <div class="card-body">
+          <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>        
+          <p class=" text-muted">{{ post.author }}</p> 
+          <p class=" text-muted">
+            {% block categories %} {% include 'post_categories.html' %} {% endblock categories %} </p>
+          <p class=" text-muted">{{ post.created_on }}</p>
+          <p class="card-text ">{{ post.content | safe }}</p>        
+        </div>
+      </div>        
+    {% endfor %}
+    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+  </div>
+  <!-- pagination -->
+  <div class="row">
+    <nav aria-label="Page navigation container"></nav>
+      <div class="col-md-4 mb-4 left pagination justify-content-center float-left">
+        {% for post in next %}
+          <a href="{% url 'post_detail' post.slug post.pk %}" class="page-link">&laquo; NEXT</a>
+          {% endfor %}
+      </div>
+      <div class="col-md-4 mb-4 right  pagination justify-content-center float-right">
+        {% for post in previous %}
+          <a href="{% url 'post_detail' post.slug post.pk %}" class="page-link">PREV &raquo;</a>
+          {% endfor %}
+      </div>
+    </nav>
+  </div>
+    
+  <!-- </div> -->
+{% endblock content %}

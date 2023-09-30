@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 left  top">
+            <div class="card-body">
+            <h1 style="text-align: center;">404 - Page not found</h1>
+            
+
+        </div>
+            {% block sidebar %} 
+                {% include 'aspire/sidebar.html' %} 
+            {% endblock sidebar %}
+    </div>
+{% endblock content %}

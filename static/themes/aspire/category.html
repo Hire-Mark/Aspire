@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+<div class="row">
+  <!-- Blog Entries Column -->
+  <div class="col-md-8 mt-3 left">
+    <h1>Category -  {% for x in catname %} {{ x.name }} {% endfor %}</h1>
+      {% for post in queryset %}
+      <div class="card mb-4">
+          <div class="card-body">
+              <a href="{% url 'post_detail' post.slug post.pk %}" ><h2 class="card-title">{{ post.title }}</h2></a>
+              <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | {% block categories %} {% include 'post_categories.html' %} {% endblock categories %} </p>
+              <p class="card-text">{{post.seo_teaser |slice:":200"  | safe  }}</p>
+              <a href="{% url 'post_detail' post.slug post.pk %}" class="btn btn-primary">Read More &rarr;</a>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+  {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+</div>    
+{% endblock content %}

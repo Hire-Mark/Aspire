@@ -1,0 +1,39 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href='../media/{{ logo }}'>
+    <meta name="description" content="{{ seo_description }}">
+    <meta name="author" content="Mark Hart">
+    <meta name="generator" content="">
+    <title>{% for post in queryset %}{{ post.title}} | {% endfor %}{{ title }}</title>
+    <link rel="canonical" href="{{ request.get_full_path }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href={% static "themes/aspire/assets/bootstrap/dist/css/bootstrap.min.css" %}rel="stylesheet">
+    <link href={% static "themes/aspire/css/style.css" %} rel="stylesheet">
+    <link href={% static "themes/aspire/css/dropdowns.css" %} rel="stylesheet">
+</head>
+<body>
+<main>
+  <header class="p-3 mb-3 border-bottom">
+    {% block navbar %} {% include 'navbar.html' %} {% endblock navbar %}
+  </header>
+  <div class="container">   
+      {% block content %}
+      <!-- Content Goes here -->  
+      {% endblock content %}
+  </div> 
+  <div class="container">
+    {% block footer %} {% include 'footer.html' %} {% endblock footer %}
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="theme/aspire/assets/bootstrap/js/color-modes.js"></script>
+<script src={% static "themes/aspire/assets/bootstrap/dist/js/bootstrap.bundle.min.js" %} crossorigin="anonymous"></script>
+</body>
+</html>

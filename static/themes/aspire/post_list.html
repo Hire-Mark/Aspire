@@ -1,0 +1,57 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            {% for post in post_list %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <a href="{% url 'post_detail' post.slug post.pk %}" ><h2 class="card-title">{{ post.title }}</h2></a>
+                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                    <p>{% block categories %} {% include 'post_categories.html' %} {% endblock categories %}</p>
+                    <p class="card-text">{{post.seo_teaser |slice:":200"  | safe  }}</p>
+                    <a href="{% url 'post_detail' post.slug post.pk %}" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+    </div>
+    <!-- pagination -->
+    <div class="row">        
+        {% if is_paginated %}
+          <nav aria-label="Page navigation conatiner"></nav>
+            {% if page_obj.next_page_number != 2 %}
+                <div class="col-md-4 mb-4 left pagination justify-content-center float-left">
+                  {% if page_obj.has_previous %}
+                  <a href="?page={{ page_obj.previous_page_number }}"class="page-link">&laquo; PREV </a>
+                  {% endif %} 
+                </div>
+                <div class="col-md-4 mb-4 right  pagination justify-content-center float-right">
+                  {% if page_obj.has_next %}
+                      <a href="?page={{ page_obj.next_page_number }}"class="page-link"> NEXT &raquo;</a>
+                  {% endif %}
+                </div>
+            {% else %}
+                <div class="col-md-8 mb-4 left pagination justify-content-center float-left">
+                  {% if page_obj.has_previous %}
+                  <a href="?page={{ page_obj.previous_page_number }}"class="page-link">&laquo; That's all folks </a>
+                  {% endif %} 
+                </div>
+                <div class="col-md-8 mb-4 right  pagination justify-content-center float-right">
+                  {% if page_obj.has_next %}
+                      <a href="?page={{ page_obj.next_page_number }}"class="page-link"> MORE &raquo;</a>    
+                  {% endif %}
+                </div>
+              {% endif %}
+          </nav>
+        {% endif %} 
+    </div>
+      
+    </div>
+        
+      <!-- </div> -->
+
+
+{%endblock%}

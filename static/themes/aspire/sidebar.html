@@ -1,0 +1,32 @@
+{% load static %}
+{% block sidebar %}
+<!-- Sidebar Widgets Column -->
+<div class="col-md-4 float-right">
+    <div class="card my-4 mt-3">
+        <div class="card-body">
+            <p style="font-size: small;">
+                <b>Disclaimer</b> <i>- This site contains product affiliate links. I may receive a commission or reward if you make a purchase or signup after clicking on one of these links.</i>
+            </p>
+        </div>
+    </div>
+    <div class="card my-4 mt-3">       
+        <div class="card-body">
+            <div class="card-text" align="center"> 
+                <img src={% static "themes/aspire/images/logo.png" %} class="img-fluid" width="150" height="150"/>
+                <p>Family Man / District Trainer <br/> Entrepreneur / Freelance Consultant</p>
+            </div>
+            <p align="center">                
+                <ul>
+                    <li><a href="mailto:{{email}}" target=”_blank” >{{email}}</a></li>
+                    <li><a href="https://www.facebook.com/{{facebook}}" target=”_blank”>Facebook</a></li>
+                    <li><a href="https://twitter.com/{{twitter}}" target=”_blank”>Twitter</a></li>
+                    <li><a href="https://www.linkedin.com/in/{{linkedin}}/" target=”_blank”>LinkedIn</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCbRIexjmat1cQHUV3NNYfWw" target=”_blank”>YouTube</a></li>
+                    <li><a href="https://cash.app/{{cashapp}}" target=”_blank”>CashApp</a></li>
+                    <li><a href="https://www.tiktok.com/{{tiktok}}" target=”_blank”>TikTok</a></li>
+                </ul>      
+            </p>            
+        </div>
+    </div>    
+</div>
+{% endblock sidebar %}
