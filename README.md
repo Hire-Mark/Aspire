@@ -16,41 +16,46 @@ hire-mark@outlook.com<br>
     rather a lets start here and customize this for the situation. 
 </p>
 <!-- start update here -->
+
 <p>To-Do:
-              <ol>
-                <li>Verify that github repo can be cloned and working without issues</li>
-                  <ul>
-                    <li>Does default data need to be loaded</li>
-                    <ul>
-                      <li>
-                        Can I preload it with the initial migration?
-                      </li>
-                    </ul>
-                  </ul>
-                <li>Complete User authentication with email verification</li>
-                <li>ADD</li>
-                <ul>
-                  <li>sign-up / sign-in for social media</li>
-                  <li>Add post form</li>
-                  <li>tags , just like categories to posts</li>
-                  <li>user profile view</li>
-                  <li>search by user posts</li>
-                  <li>a contact page</li>
-                  <li>comment system?</li>
-                </ul>
-                <li>Figure out where and how to host</li>
-                <li>Style the Administration Dashboard</li>
-              </ol>
+    <ol>
+    <li>Verify that github repo can be cloned and working without issues</li>
+        <ul>
+        <li>Does default data need to be loaded</li>
+        <ul>
+            <li>
+            Can I preload it with the initial migration?
+            </li>
+        </ul>
+        </ul>
+    <li>Complete User authentication with email verification</li>
+    <li>ADD</li>
+    <ul>
+        <li>sign-up / sign-in for social media</li>
+        <li>Add post form</li>
+        <li>tags , just like categories to posts</li>
+        <li>user profile view</li>
+        <li>search by user posts</li>
+        <li>a contact page</li>
+        <li>comment system?</li>
+    </ul>
+    <li>logic for display of social media if not present</li>
+        <ul>
+        <li>Or should the model be adjusted for each application</li>
+        </ul>
+    <li>Figure out where and how to host</li>
+    <li>Style the Administration Dashboard</li>
+    </ol>
 
 </p>
-<p>Initial Entry - 10/1/2023
+<p><i>Initial Entry - 10/01/2023</i>
     <ul style="list-style-type: symbols(♥);">
-    <li>AuthAll for social media sign up  and authentication</li>
-    <li>Jazzamin added for bootstrap admin panel</li>
-    <li></li>
+    <li>AuthAll package installed but not configured</li>
+    <li>Jazzamin added for bootstrap admin panel and configured but not styled completely</li>
+    <li>ckeditor package installed</li>
+    <li>phone field package</li>
     </ul>
 </p>
 <p>
     For more information please reach out.
 </p>
-
