@@ -9,8 +9,7 @@ from .models import Category, Post, SiteProfile
 # navbar_catgories = Category.objects.all().values('id','name',)
 
 # Create your views here.
-def index(request):
-    
+def index(request):    
      return render(request, 'index.html')
  
 

@@ -11,21 +11,18 @@
     </div>
     <div class="card my-4 mt-3">       
         <div class="card-body">
-            <div class="card-text" align="center"> 
-                <img src={% static "themes/aspire/images/logo.png" %} class="img-fluid" width="150" height="150"/>
-                <p>Family Man / District Trainer <br/> Entrepreneur / Freelance Consultant</p>
-            </div>
-            <p align="center">                
-                <ul>
-                    <li><a href="mailto:{{email}}" target=”_blank” >{{email}}</a></li>
-                    <li><a href="https://www.facebook.com/{{facebook}}" target=”_blank”>Facebook</a></li>
-                    <li><a href="https://twitter.com/{{twitter}}" target=”_blank”>Twitter</a></li>
-                    <li><a href="https://www.linkedin.com/in/{{linkedin}}/" target=”_blank”>LinkedIn</a></li>
-                    <li><a href="https://www.youtube.com/channel/UCbRIexjmat1cQHUV3NNYfWw" target=”_blank”>YouTube</a></li>
-                    <li><a href="https://cash.app/{{cashapp}}" target=”_blank”>CashApp</a></li>
-                    <li><a href="https://www.tiktok.com/{{tiktok}}" target=”_blank”>TikTok</a></li>
-                </ul>      
-            </p>            
+            <div class="card-text"> 
+                <div align="center" style="padding-top: 3px; padding-bottom: 5px;">
+                    <img src={% static "themes/aspire/images/logo.png" %} class="img-fluid"  width="150" height="150"/>
+                </div>
+                <p>{{ seo_description }}</p>
+            </div>                          
+                <p>
+                    <a href="mailto:{{email}}" target=”_blank” title="Email Me" style="color: #000000;"><i class="fa-solid fa-envelope fa-xl"></i> - {{ email }}</a></li>
+                </p>
+                <p align="center">
+                    {% block social_block %} {% include 'social-media.html' %} {% endblock social_block %}
+                </p>            
         </div>
     </div>    
 </div>

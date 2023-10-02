@@ -14,7 +14,8 @@ def site_settings(request):
         title = 'Welcome to your new Aspire Blog'
         slug = 'Aspire-Blog'
         tagline = 'Made with Hart'
-        logopath = 'logo path'
+        logopath = 'themes/aspire/images/logo.png'
+        copyright = '2023 copyright text'
         contact = 'Contact Name'
         email = 'contact email'
         phone = '555.555.5555'
@@ -24,7 +25,7 @@ def site_settings(request):
         city = 'city'
         state = 'state'
         zip = 'zip'
-        seo_description = 'website description'
+        seo_description = 'Welcome to the Aspire, a simple user friendly custom CMS designed to meet your business needs'
         bio = 'This is your bio page'
         facebook = 'facebook'
         linkedin = 'linkedin'
@@ -48,6 +49,7 @@ def site_settings(request):
             tagline = x.tagline
             logopath = x.logo
             contact = x.contact
+            copyright = x.copyright
             email = x.email
             phone = x.phone
             website = x.website
@@ -80,6 +82,7 @@ def site_settings(request):
             'tagline': tagline,
             'logo': logopath,
             'contact': contact,
+            'copyright': copyright,
             'email': email,
             'phone': phone,
             'website': website,

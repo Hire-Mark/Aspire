@@ -14,6 +14,7 @@ urlpatterns = [
     IndexPagePath,
     path('search/', views.search, name = 'search'),
     path('about/', views.about, name='about'),
+    path('articles/', views.PostList.as_view(), name='articles'),
     # path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     # path('<slug:slug>/<int:pk>', views.PostDetail.as_view(), name='post_detail'),
     path('<slug:slug>/<int:pk>', views.postdetail, name='post_detail'),
